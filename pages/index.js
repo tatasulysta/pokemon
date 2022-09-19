@@ -8,12 +8,16 @@ import optionsGenerator from '../utils/helpers/optionsGenerator';
 
 import Button from '../components/Button';
 import ImageCard from '../components/ImageCard';
+import useFetchImage from '../utils/hooks/useFetchImage';
 
 // export const getStaticProps = async () => {};
 
 export default function Home() {
 	const [number, setNumber] = useState();
 	const [options, setOptions] = useState();
+	const [url, setUrl] = useState();
+	const src = useFetchImage(url);
+
 	useEffect(() => {
 		if (localStorage.getItem('POKEMON') !== {}) {
 			fetch('https://pokeapi.co/api/v2/pokemon?limit=100')
@@ -23,20 +27,31 @@ export default function Home() {
 				);
 		}
 		setNumber(randomGenerator());
+		init();
 	}, []);
-	const handleAgain = () => {
+
+	const init = () => {
 		const num = randomGenerator();
-		console.log(num);
-		console.log(optionsGenerator(num));
+		const [options, data] = optionsGenerator(num);
 		setNumber(num);
+		setOptions(options);
+		setUrl(data.url);
 	};
+
+	const handleAgain = () => {
+		init();
+	};
+
 	return (
 		<>
 			<div className={styles.container}>
 				<Button onClick={handleAgain}> Again</Button>
 				<h1 className={styles.title}>Guess The Pokemon</h1>
 				{number}
-				<ImageCard src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png" />
+				<ImageCard src={src} />
+				{options
+					? options?.map((option) => <p key={option.name}>{option.name}</p>)
+					: ''}
 			</div>
 		</>
 	);

@@ -9,9 +9,6 @@ function randomNumber() {
 }
 export default function optionsGenerator(idx) {
 	const options = [getPokemon(), getPokemon(), getPokemon(), getPokemon()];
-
 	options[Number(randomNumber())] = getPokemon(idx);
-	console.log(getPokemon(idx));
-
-	return options;
+	return [options, getPokemon(idx)];
 }
