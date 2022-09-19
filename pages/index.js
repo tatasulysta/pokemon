@@ -8,7 +8,7 @@ import optionsGenerator from '../utils/helpers/optionsGenerator';
 
 import Button from '../components/Button';
 import ImageCard from '../components/ImageCard';
-import useFetchImage from '../utils/hooks/useFetchImage';
+import useFetchPokemon from '../utils/hooks/useFetchPokemon';
 
 // export const getStaticProps = async () => {};
 
@@ -16,7 +16,7 @@ export default function Home() {
 	const [number, setNumber] = useState();
 	const [options, setOptions] = useState();
 	const [url, setUrl] = useState();
-	const src = useFetchImage(url);
+	const src = useFetchPokemon(url);
 
 	useEffect(() => {
 		if (localStorage.getItem('POKEMON') !== {}) {
