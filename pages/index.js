@@ -50,12 +50,12 @@ export default function Home() {
 	return (
 		<>
 			<div className={styles.container}>
-				<Button onClick={handleAgain}> Again</Button>
+				<Button onClick={handleAgain}>Again</Button>
 				<h1 className={styles.title}>Guess The Pokemon</h1>
-				{number}
-				<ImageCard src={src} />
-				{information && <Details information={information} />}
-				<DetailList />
+				<main className={styles['container--hint']}>
+					<ImageCard src={src} />
+					{information && <Details information={information} />}
+				</main>
 			</div>
 		</>
 	);
