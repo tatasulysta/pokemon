@@ -5,6 +5,8 @@ import styles from '../styles/Home.module.css';
 
 import randomGenerator from '../utils/helpers/randomGenerator';
 
+import Button from '../components/Button';
+
 // export const getStaticProps = async () => {};
 
 export default function Home() {
@@ -23,9 +25,17 @@ export default function Home() {
 		setNumber(randomGenerator());
 	};
 	return (
-		<div className={styles.container}>
-			{number}
-			<button onClick={handleClick}>hello</button>
-		</div>
+		<>
+			<div className={styles.container}>
+				<h1 className={styles.title}>Guess The Pokemon</h1>
+				{number}
+				<Button variant={'primary'} onClick={handleClick}>
+					primary
+				</Button>
+				<Button variant={'secondary'} onClick={handleClick}>
+					secondary
+				</Button>
+			</div>
+		</>
 	);
 }
