@@ -8,12 +8,19 @@
 	flex-direction: column;
 	align-items: center;
 	border-radius: 10px;
+	min-width: 74px;
 }
-.icon {
+.card--icon {
 	font-size: 30px;
 }
 .weight {
 	color: #eacf6b;
+}
+.moves {
+	color: #96d7d6;
+}
+.height {
+	color: #e6a295;
 }
 .card--title {
 	font-size: 14px;

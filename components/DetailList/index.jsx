@@ -1,17 +1,16 @@
 import React from 'react';
 import styles from './styles.module.css';
-import { FaWeightHanging } from 'react-icons/fa';
+import { detailsList } from '../../utils/constants/details-list';
 
-const DetailList = () => {
-	const component = (
-		<FaWeightHanging className={`${styles.icon} ${styles.weight}`} />
-	);
+const DetailList = ({ title, information }) => {
 	return (
-		<div className={styles['card--container']}>
-			{component}
-			<p className={styles['card--title']}>Weight</p>
-			<p className={styles['card--information']}>3000</p>
-		</div>
+		<li className={styles['card--container']}>
+			<span className={`${styles[title]} ${styles['card--icon']}`}>
+				{detailsList[title]}
+			</span>
+			<p className={styles['card--title']}>{title}</p>
+			<p className={styles['card--information']}>{information}</p>
+		</li>
 	);
 };
 

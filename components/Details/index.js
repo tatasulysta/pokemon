@@ -1,4 +1,5 @@
 import React from 'react';
+import DetailList from '../DetailList';
 
 import styles from './styles.module.css';
 
@@ -17,9 +18,7 @@ const Details = ({ information }) => {
 							</ul>
 						</li>
 					) : (
-						<li key={key} className={styles[key]}>
-							{key} : {information[key]}
-						</li>
+						<DetailList title={key} information={information[key]} key={key} />
 					);
 				})}
 			</ul>
