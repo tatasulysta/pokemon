@@ -5,13 +5,23 @@
 	padding: 20px 40px;
 	border-radius: 20px;
 }
-.list-container {
+.list--container {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	display: flex;
 	gap: 10px;
+	flex-direction: column;
 }
 .weight {
 	background-color: antiquewhite;
+}
+.list--container_upper {
+	display: flex;
+	gap: 10px;
+	width: 100%;
+	justify-content: space-between;
+}
+.list--container_bottom {
+	width: 100%;
 }

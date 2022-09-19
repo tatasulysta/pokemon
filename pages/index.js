@@ -55,9 +55,6 @@ export default function Home() {
 				{number}
 				<ImageCard src={src} />
 				{information && <Details information={information} />}
-				{options
-					? options?.map((option) => <p key={option.name}>{option.name}</p>)
-					: ''}
 				<DetailList />
 			</div>
 		</>
