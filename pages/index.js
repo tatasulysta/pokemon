@@ -16,7 +16,7 @@ export default function Home() {
 	const [number, setNumber] = useState();
 	const [options, setOptions] = useState();
 	const [url, setUrl] = useState();
-	const src = useFetchPokemon(url);
+	const { src, information } = useFetchPokemon(url);
 
 	useEffect(() => {
 		if (localStorage.getItem('POKEMON') !== {}) {
@@ -29,6 +29,9 @@ export default function Home() {
 		setNumber(randomGenerator());
 		init();
 	}, []);
+	useEffect(() => {
+		console.log(information);
+	}, [src, information]);
 
 	const init = () => {
 		const num = randomGenerator();
