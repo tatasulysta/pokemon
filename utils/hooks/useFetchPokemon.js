@@ -10,15 +10,17 @@ const useFetchPokemon = (url) => {
 			.then((res) => res.json())
 			.then((res) => {
 				setImageSrc(res.sprites['back_default']);
+				const abilities = res.abilities.map((stay) => stay.ability.name);
 				setInformation({
 					moves: res.moves[0].move.name,
 					weight: res.weight,
 					height: res.height,
-					abilities: res.abilities,
+					abilities,
 				});
 			});
+		setLoading(false);
 	}, [url]);
-	return { src, information };
+	return { src, information, loading };
 };
 
 export default useFetchPokemon;

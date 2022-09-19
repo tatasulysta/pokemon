@@ -8,7 +8,9 @@ import optionsGenerator from '../utils/helpers/optionsGenerator';
 
 import Button from '../components/Button';
 import ImageCard from '../components/ImageCard';
+import Details from '../components/Details';
 import useFetchPokemon from '../utils/hooks/useFetchPokemon';
+import DetailList from '../components/DetailList';
 
 // export const getStaticProps = async () => {};
 
@@ -16,7 +18,7 @@ export default function Home() {
 	const [number, setNumber] = useState();
 	const [options, setOptions] = useState();
 	const [url, setUrl] = useState();
-	const { src, information } = useFetchPokemon(url);
+	const { src, information, loading } = useFetchPokemon(url);
 
 	useEffect(() => {
 		if (localStorage.getItem('POKEMON') !== {}) {
@@ -52,9 +54,11 @@ export default function Home() {
 				<h1 className={styles.title}>Guess The Pokemon</h1>
 				{number}
 				<ImageCard src={src} />
+				{information && <Details information={information} />}
 				{options
 					? options?.map((option) => <p key={option.name}>{option.name}</p>)
 					: ''}
+				<DetailList />
 			</div>
 		</>
 	);

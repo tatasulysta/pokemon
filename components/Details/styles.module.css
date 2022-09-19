@@ -1,0 +1,15 @@
+.container {
+	background-color: white;
+	width: fit-content;
+	height: fit-content;
+	padding: 20px 40px;
+	border-radius: 20px;
+}
+.list-container {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.weight {
+	background-color: antiquewhite;
+}
