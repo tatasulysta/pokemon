@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.css';
 import randomGenerator from '../utils/helpers/randomGenerator';
 
 import Button from '../components/Button';
+import ImageCard from '../components/ImageCard';
 
 // export const getStaticProps = async () => {};
 
@@ -35,6 +36,7 @@ export default function Home() {
 				<Button variant={'secondary'} onClick={handleClick}>
 					secondary
 				</Button>
+				<ImageCard src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png" />
 			</div>
 		</>
 	);
