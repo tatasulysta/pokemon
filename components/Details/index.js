@@ -10,20 +10,20 @@ const Details = ({ information }) => {
 			<ul className={styles['list--container']}>
 				<span className={styles['list--container_upper']}>
 					{Object.keys(information).map((key) => {
-						return (
-							key !== 'abilities' && (
+						if (key !== 'moves' && key !== 'abilities')
+							return (
 								<DetailList
 									title={key}
 									information={information[key]}
 									key={key}
 								/>
-							)
-						);
+							);
 					})}
 				</span>
 				<span className={styles['list--container_bottom']}>
+					<DetailAbilities detail={information['moves']} title={'moves'} />
 					<DetailAbilities
-						abilities={information['abilities']}
+						detail={information['abilities']}
 						title={'abilities'}
 					/>
 				</span>

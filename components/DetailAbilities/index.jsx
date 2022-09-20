@@ -1,16 +1,16 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-const DetailAbilities = ({ abilities, title }) => {
+const DetailAbilities = ({ detail, title }) => {
 	return (
 		<li className={styles['card--container']}>
 			<span className={`${styles['card--title']} `}>{title}</span>
 			{
 				<ul className={styles['card--abilities_container']}>
-					{abilities.map((ability) => {
+					{detail.map((detail) => {
 						return (
-							<li key={ability} className={styles['card--abilities_list']}>
-								{ability}
+							<li key={detail} className={styles['card--abilities_list']}>
+								{detail}
 							</li>
 						);
 					})}

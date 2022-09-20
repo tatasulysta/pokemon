@@ -1,11 +1,11 @@
 .card--container {
 	background-color: white;
 	height: fit-content;
-	width: fit-content;
 	font-family: 'Roboto', sans-serif;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 	align-items: center;
 	border-radius: 10px;
 	min-width: 74px;
