@@ -12,9 +12,17 @@ import Details from '../components/Details';
 import useFetchPokemon from '../utils/hooks/useFetchPokemon';
 import DetailList from '../components/DetailList';
 
-// export const getStaticProps = async () => {};
+export const getStaticProps = async () => {
+	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
+	const data = await res.json();
+	return {
+		props: {
+			data,
+		},
+	};
+};
 
-export default function Home() {
+export default function Home({ data }) {
 	const [number, setNumber] = useState();
 	const [options, setOptions] = useState();
 	const [url, setUrl] = useState();
@@ -22,15 +30,11 @@ export default function Home() {
 
 	useEffect(() => {
 		if (localStorage.getItem('POKEMON') !== {}) {
-			fetch('https://pokeapi.co/api/v2/pokemon?limit=100')
-				.then((res) => res.json())
-				.then((data) =>
-					localStorage.setItem('POKEMON', JSON.stringify(data.results))
-				);
+			localStorage.setItem('POKEMON', JSON.stringify(data.results));
 		}
 		setNumber(randomGenerator());
 		init();
-	}, []);
+	}, [data]);
 	useEffect(() => {
 		console.log(information);
 	}, [src, information]);
