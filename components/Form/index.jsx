@@ -5,7 +5,7 @@ import Options from '../Options';
 
 import styles from './styles.module.css';
 
-const Form = ({ formData, setIsTrue }) => {
+const Form = ({ formData, setIsTrue, isTrue, able }) => {
 	const [select, setSelect] = useState();
 
 	const handleChange = (e) => {
@@ -25,8 +25,13 @@ const Form = ({ formData, setIsTrue }) => {
 						handleChange={handleChange}
 						select={select}
 					/>
-				</div>{' '}
-				<Button variant={'secondary'} type="submit" onClick={handleSubmit}>
+				</div>
+				<Button
+					variant={'secondary'}
+					type="submit"
+					onClick={handleSubmit}
+					able={able}
+				>
 					Submit
 				</Button>
 			</form>

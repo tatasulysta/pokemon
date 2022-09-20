@@ -10,7 +10,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0 auto;
 	width: fit-content;
 	border-radius: 20px;
 	background-color: antiquewhite;
@@ -25,4 +24,17 @@
 }
 .header > button {
 	position: relative;
+}
+.content--wrapper {
+	display: flex;
+	justify-content: space-around;
+}
+.content--wrapper > aside {
+	flex-basis: 20%;
+	display: flex;
+	align-items: center;
+}
+
+.content--main {
+	background-color: aqua;
 }

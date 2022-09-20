@@ -39,12 +39,13 @@ export default function Home({ data }) {
 			answer: data.name,
 		});
 		setUrl(data.url);
+		setShouldCountdown(true);
+		setCount(60);
+		setScore(0);
 	};
 
 	const handleAgain = () => {
 		init();
-		setShouldCountdown(true);
-		setCount(60);
 	};
 
 	useEffect(() => {
@@ -62,7 +63,7 @@ export default function Home({ data }) {
 		}
 	}, [isTrue]);
 	// WIP == bug on custom hook
-	const [count, setCount] = useState(60);
+	const [count, setCount] = useState(5);
 	const [shouldCountdown, setShouldCountdown] = useState(true);
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -83,22 +84,30 @@ export default function Home({ data }) {
 	return (
 		<>
 			<div className={styles.container}>
-				<p>this is count {count}</p>
 				<header className={styles.header}>
 					<Button onClick={handleAgain}>Again</Button>
 					<h1 className={styles.title}>Guess The Pokemon</h1>
 				</header>
-				<main className={styles['container--hint']}>
-					<ImageCard src={src} />
-					{information && <Details information={information} />}
+				<main className={styles['content--wrapper']}>
+					<aside>
+						<div>
+							<p>Time : {count}s</p>
+							<p>Current Score :{score}</p>
+						</div>
+					</aside>
+					<section className={styles['content--main']}>
+						<div className={styles['container--hint']}>
+							<ImageCard src={src} />
+							{information && <Details information={information} />}
+						</div>
+						<Form
+							formData={formData}
+							setIsTrue={setIsTrue}
+							isTrue={isTrue}
+							able={shouldCountdown}
+						/>
+					</section>
 				</main>
-				{score}
-				<Form
-					formData={formData}
-					setScore={setScore}
-					setIsTrue={setIsTrue}
-					able={shouldCountdown}
-				/>
 			</div>
 		</>
 	);
