@@ -5,7 +5,7 @@ import Options from '../Options';
 
 import styles from './styles.module.css';
 
-const Form = ({ formData, setIsTrue, isTrue, able }) => {
+const AnswerForm = ({ formData, setIsTrue, isTrue, able }) => {
 	const [select, setSelect] = useState();
 
 	const handleChange = (e) => {
@@ -39,4 +39,4 @@ const Form = ({ formData, setIsTrue, isTrue, able }) => {
 	);
 };
 
-export default Form;
+export default AnswerForm;

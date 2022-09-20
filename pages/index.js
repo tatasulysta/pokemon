@@ -12,7 +12,7 @@ import optionsGenerator from '../utils/helpers/optionsGenerator';
 import Button from '../components/Button';
 import ImageCard from '../components/ImageCard';
 import Details from '../components/Details';
-import Form from '../components/Form';
+import AnswerForm from '../components/AnswerForm';
 
 export const getStaticProps = async () => {
 	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
@@ -58,10 +58,10 @@ export default function Home({ data }) {
 	useEffect(() => {
 		if (isTrue) {
 			init();
-			setScore((score) => score + 1);
+			setScore(score + 1);
 			setIsTrue(false);
 		}
-	}, [isTrue]);
+	}, [isTrue, score]);
 	// WIP == bug on custom hook
 	const [count, setCount] = useState(5);
 	const [shouldCountdown, setShouldCountdown] = useState(true);
@@ -100,7 +100,7 @@ export default function Home({ data }) {
 							<ImageCard src={src} />
 							{information && <Details information={information} />}
 						</div>
-						<Form
+						<AnswerForm
 							formData={formData}
 							setIsTrue={setIsTrue}
 							isTrue={isTrue}
