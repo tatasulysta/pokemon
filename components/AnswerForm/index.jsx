@@ -16,26 +16,24 @@ const AnswerForm = ({ formData, setIsTrue, isTrue, able }) => {
 		select === formData?.answer ? setIsTrue(true) : setIsTrue(false);
 	};
 	return (
-		<>
-			<form onSubmit={handleSubmit} className={styles.form}>
-				<b>Answer</b>
-				<div className={styles['options--wrapper']}>
-					<Options
-						options={formData?.options}
-						handleChange={handleChange}
-						select={select}
-					/>
-				</div>
-				<Button
-					variant={'secondary'}
-					type="submit"
-					onClick={handleSubmit}
-					able={able}
-				>
-					Submit
-				</Button>
-			</form>
-		</>
+		<form onSubmit={handleSubmit} className={styles.form}>
+			<b>Answer</b>
+			<div className={styles['options--wrapper']}>
+				<Options
+					options={formData?.options}
+					handleChange={handleChange}
+					select={select}
+				/>
+			</div>
+			<Button
+				variant={'secondary'}
+				type="submit"
+				onClick={handleSubmit}
+				able={able}
+			>
+				Submit
+			</Button>
+		</form>
 	);
 };
 

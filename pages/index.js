@@ -13,6 +13,7 @@ import Button from '../components/Button';
 import ImageCard from '../components/ImageCard';
 import Details from '../components/Details';
 import AnswerForm from '../components/AnswerForm';
+import NewScoreForm from '../components/NewScoreForm';
 
 export const getStaticProps = async () => {
 	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
@@ -106,6 +107,7 @@ export default function Home({ data }) {
 							isTrue={isTrue}
 							able={shouldCountdown}
 						/>
+						<NewScoreForm />
 					</section>
 				</main>
 			</div>
