@@ -12,7 +12,7 @@ const useFetchPokemon = (url) => {
 				setImageSrc(res.sprites['back_default']);
 				const abilities = res.abilities.map((stay) => stay.ability.name);
 				setInformation({
-					moves: res.moves[0].move.name,
+					moves: res.moves.slice(0, 5).map((move) => move.move.name),
 					weight: res.weight,
 					height: res.height,
 					abilities,
