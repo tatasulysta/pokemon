@@ -20,6 +20,7 @@ const Details = ({ information }) => {
 							);
 					})}
 				</span>
+
 				<span className={styles['list--container_bottom']}>
 					<DetailLists detail={information['moves']} title={'moves'} />
 					<DetailLists detail={information['abilities']} title={'abilities'} />

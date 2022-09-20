@@ -11,6 +11,8 @@ import ImageCard from '../components/ImageCard';
 import Details from '../components/Details';
 import useFetchPokemon from '../utils/hooks/useFetchPokemon';
 import DetailList from '../components/DetailList';
+import Options from '../components/Options';
+import Form from '../components/Form';
 
 export const getStaticProps = async () => {
 	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
@@ -23,27 +25,33 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ data }) {
-	const [number, setNumber] = useState();
-	const [options, setOptions] = useState();
+	const [formData, setFormData] = useState();
 	const [url, setUrl] = useState();
-	const { src, information, loading } = useFetchPokemon(url);
+	const { src, information } = useFetchPokemon(url);
+	const [score, setScore] = useState(0);
+	const [isTrue, setIsTrue] = useState();
 
 	useEffect(() => {
 		if (localStorage.getItem('POKEMON') !== {}) {
 			localStorage.setItem('POKEMON', JSON.stringify(data.results));
 		}
-		setNumber(randomGenerator());
 		init();
 	}, [data]);
 	useEffect(() => {
-		console.log(information);
-	}, [src, information]);
+		if (isTrue) {
+			init();
+			setScore((score) => score + 1);
+			setIsTrue(false);
+		}
+	}, [isTrue]);
 
 	const init = () => {
 		const num = randomGenerator();
 		const [options, data] = optionsGenerator(num);
-		setNumber(num);
-		setOptions(options);
+		setFormData({
+			options,
+			answer: data.name,
+		});
 		setUrl(data.url);
 	};
 
@@ -54,12 +62,16 @@ export default function Home({ data }) {
 	return (
 		<>
 			<div className={styles.container}>
-				<Button onClick={handleAgain}>Again</Button>
-				<h1 className={styles.title}>Guess The Pokemon</h1>
+				<header className={styles.header}>
+					<Button onClick={handleAgain}>Again</Button>
+					<h1 className={styles.title}>Guess The Pokemon</h1>
+				</header>
 				<main className={styles['container--hint']}>
 					<ImageCard src={src} />
 					{information && <Details information={information} />}
 				</main>
+				{score}
+				<Form formData={formData} setScore={setScore} setIsTrue={setIsTrue} />
 			</div>
 		</>
 	);

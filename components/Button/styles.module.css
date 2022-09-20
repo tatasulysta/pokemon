@@ -6,6 +6,7 @@
 	padding: 13px 20px;
 	border-radius: 10px;
 	cursor: pointer;
+	height: fit-content;
 }
 .primary {
 	border: 2px solid var(--darker-yellow);
@@ -16,7 +17,6 @@
 .secondary {
 	background-color: white;
 	border: 2px solid white;
-
 	color: var(--deep-yellow);
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
