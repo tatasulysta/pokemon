@@ -11,7 +11,7 @@ function generateRandomOptions(idx) {
 	const arr = [idx];
 	const returnArr = [];
 	while (arr.length < 5) {
-		let temp = randomGenerator();
+		const temp = randomGenerator();
 		if (!arr.includes(temp)) {
 			arr.push(temp);
 			returnArr.push(getPokemon(temp));

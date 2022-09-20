@@ -14,6 +14,7 @@ import ImageCard from '../components/ImageCard';
 import Details from '../components/Details';
 import AnswerForm from '../components/AnswerForm';
 import NewScoreForm from '../components/NewScoreForm';
+import Table from '../components/Table';
 
 export const getStaticProps = async () => {
 	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
@@ -41,6 +42,7 @@ export default function Home({ data }) {
 			options,
 			answer: data.name,
 		});
+		setScore(0);
 		setUrl(data.url);
 	};
 
@@ -62,7 +64,6 @@ export default function Home({ data }) {
 			setIsTrue(false);
 		}
 	}, [isTrue, score]);
-	// WIP == bug on custom hook
 
 	return (
 		<>
@@ -91,6 +92,9 @@ export default function Home({ data }) {
 						/>
 						<NewScoreForm />
 					</section>
+					<aside>
+						<Table />
+					</aside>
 				</main>
 			</div>
 		</>
