@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-const DetailAbilities = ({ detail, title }) => {
+const DetailLists = ({ detail, title }) => {
 	return (
 		<li className={styles['card--container']}>
 			<span className={`${styles['card--title']} `}>{title}</span>
@@ -20,4 +20,4 @@ const DetailAbilities = ({ detail, title }) => {
 	);
 };
 
-export default DetailAbilities;
+export default DetailLists;

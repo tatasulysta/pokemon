@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import DetailAbilities from '../DetailAbilities';
+import DetailLists from '../DetailLists';
 import DetailList from '../DetailList';
 
 import styles from './styles.module.css';
@@ -21,11 +21,8 @@ const Details = ({ information }) => {
 					})}
 				</span>
 				<span className={styles['list--container_bottom']}>
-					<DetailAbilities detail={information['moves']} title={'moves'} />
-					<DetailAbilities
-						detail={information['abilities']}
-						title={'abilities'}
-					/>
+					<DetailLists detail={information['moves']} title={'moves'} />
+					<DetailLists detail={information['abilities']} title={'abilities'} />
 				</span>
 			</ul>
 		</div>
