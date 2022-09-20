@@ -31,8 +31,10 @@ export default function Home({ data }) {
 	const { src, information } = useFetchPokemon(url);
 	const [score, setScore] = useState(0);
 	const [isTrue, setIsTrue] = useState();
+	const [count, shouldCountdown, { setRestart }] = useCountdown();
 
 	const init = () => {
+		setRestart();
 		const num = randomGenerator();
 		const [options, data] = optionsGenerator(num);
 		setFormData({
@@ -40,9 +42,6 @@ export default function Home({ data }) {
 			answer: data.name,
 		});
 		setUrl(data.url);
-		setShouldCountdown(true);
-		setCount(60);
-		setScore(0);
 	};
 
 	const handleAgain = () => {
@@ -64,23 +63,6 @@ export default function Home({ data }) {
 		}
 	}, [isTrue, score]);
 	// WIP == bug on custom hook
-	const [count, setCount] = useState(5);
-	const [shouldCountdown, setShouldCountdown] = useState(true);
-	useEffect(() => {
-		const interval = setInterval(() => {
-			if (shouldCountdown) {
-				setCount((count) => count - 1);
-			}
-		}, 1000);
-
-		return () => clearInterval(interval);
-	}, [shouldCountdown]);
-
-	useEffect(() => {
-		if (count === 0) {
-			setShouldCountdown(false);
-		}
-	}, [count]);
 
 	return (
 		<>
