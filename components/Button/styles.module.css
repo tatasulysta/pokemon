@@ -22,7 +22,10 @@
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-/* .primary:disabled,
+.primary:disabled,
 .secondary:disabled {
-	color: red;
-} */
+	background-color: gray;
+	color: rgb(194, 194, 194);
+	border: none;
+	cursor: not-allowed;
+}
