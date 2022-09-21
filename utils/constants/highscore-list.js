@@ -1,4 +1,4 @@
-export const highscore = [
+export const HIGHSCORE = [
 	{
 		score: 5,
 		name: 'Terrance',

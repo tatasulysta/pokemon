@@ -5,7 +5,7 @@ import Options from '../Options';
 
 import styles from './styles.module.css';
 
-const AnswerForm = ({ formData, setIsTrue, isTrue, able }) => {
+const AnswerForm = ({ formData, setIsAnswerTrue, able }) => {
 	const [select, setSelect] = useState();
 
 	const handleChange = (e) => {
@@ -13,7 +13,9 @@ const AnswerForm = ({ formData, setIsTrue, isTrue, able }) => {
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		select === formData?.answer ? setIsTrue(true) : setIsTrue(false);
+		select === formData?.answer
+			? setIsAnswerTrue(true)
+			: setIsAnswerTrue(false);
 	};
 	return (
 		<form onSubmit={handleSubmit} className={styles.form}>

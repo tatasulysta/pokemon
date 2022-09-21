@@ -1,10 +1,11 @@
-import React from 'react';
-
-import { highscore } from '../../utils/constants/highscore-list';
+import React, { useContext } from 'react';
+import HighscoreContext from '../../context/highscore-context';
 
 import styles from './styles.module.css';
 
-const Table = () => {
+const Table = ({}) => {
+	const highscoreProvider = useContext(HighscoreContext);
+	const highscore = highscoreProvider.highscore;
 	return (
 		<table className={styles.table}>
 			<thead>
@@ -13,7 +14,7 @@ const Table = () => {
 				</tr>
 			</thead>
 			<tbody>
-				{highscore.map(({ name }) => (
+				{highscore?.map(({ name }) => (
 					<tr key={name}>
 						<td>{name}</td>
 					</tr>

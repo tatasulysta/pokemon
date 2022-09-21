@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import useFetchPokemon from '../utils/hooks/useFetchPokemon';
 import useCountdown from '../utils/hooks/useCountDown';
@@ -15,6 +15,9 @@ import Details from '../components/Details';
 import AnswerForm from '../components/AnswerForm';
 import NewScoreForm from '../components/NewScoreForm';
 import Table from '../components/Table';
+import HighscoreContext, {
+	HighscoreContextProvider,
+} from '../context/highscore-context';
 
 export const getStaticProps = async () => {
 	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
@@ -27,15 +30,17 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ data }) {
-	const [formData, setFormData] = useState();
-	const [url, setUrl] = useState();
+	const highscoreContext = useContext(HighscoreContext);
+	const highscore = highscoreContext.highscore;
+	const [formData, setFormData] = useState({});
+	const [url, setUrl] = useState('');
 	const { src, information } = useFetchPokemon(url);
 	const [score, setScore] = useState(0);
-	const [isTrue, setIsTrue] = useState();
+	const [isAnswerTrue, setIsAnswerTrue] = useState();
+	const [showHighscoreForm, setShowHighscoreForm] = useState(false);
 	const [count, shouldCountdown, { setRestart }] = useCountdown();
 
 	const init = () => {
-		setRestart();
 		const num = randomGenerator();
 		const [options, data] = optionsGenerator(num);
 		setFormData({
@@ -44,9 +49,11 @@ export default function Home({ data }) {
 		});
 		setScore(0);
 		setUrl(data.url);
+		setShowHighscoreForm(false);
 	};
 
 	const handleAgain = () => {
+		setRestart();
 		init();
 	};
 
@@ -58,15 +65,28 @@ export default function Home({ data }) {
 	}, [data]);
 
 	useEffect(() => {
-		if (isTrue) {
+		if (isAnswerTrue) {
 			init();
 			setScore(score + 1);
-			setIsTrue(false);
+			setIsAnswerTrue(false);
 		}
-	}, [isTrue, score]);
+	}, [isAnswerTrue, score]);
+
+	useEffect(() => {
+		const highscores = highscore.map((highscore) => highscore.score);
+		if (count === 0) {
+			highscores.map((highscore) => {
+				if (highscore <= score) {
+					return setShowHighscoreForm(true);
+				} else {
+					return setShowHighscoreForm(false);
+				}
+			});
+		}
+	}, [count, score, highscore]);
 
 	return (
-		<>
+		<HighscoreContextProvider>
 			<div className={styles.container}>
 				<header className={styles.header}>
 					<Button onClick={handleAgain}>Again</Button>
@@ -84,19 +104,21 @@ export default function Home({ data }) {
 							<ImageCard src={src} />
 							{information && <Details information={information} />}
 						</div>
-						<AnswerForm
-							formData={formData}
-							setIsTrue={setIsTrue}
-							isTrue={isTrue}
-							able={shouldCountdown}
-						/>
-						<NewScoreForm />
+						{showHighscoreForm ? (
+							<NewScoreForm score={score} />
+						) : (
+							<AnswerForm
+								formData={formData}
+								setIsAnswerTrue={setIsAnswerTrue}
+								able={shouldCountdown}
+							/>
+						)}
 					</section>
 					<aside>
 						<Table />
 					</aside>
 				</main>
 			</div>
-		</>
+		</HighscoreContextProvider>
 	);
 }
