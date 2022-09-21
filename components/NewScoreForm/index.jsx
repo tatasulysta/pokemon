@@ -5,8 +5,9 @@ import Button from '../Button';
 
 import styles from './styles.module.css';
 
-const NewScoreForm = ({ score, addHighscore }) => {
+const NewScoreForm = ({ score }) => {
 	const [name, setName] = useState('');
+	const [able, setAble] = useState(true);
 	const highscoreProvider = useContext(HighscoreContext);
 
 	const handleChange = (e) => {
@@ -14,7 +15,12 @@ const NewScoreForm = ({ score, addHighscore }) => {
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		highscoreProvider.addHighscore({ score, name });
+		if (name === ' ') {
+			window.alert('NO NAME');
+		} else {
+			highscoreProvider.addHighscore({ score, name });
+			setAble(false);
+		}
 	};
 	return (
 		<form onSubmit={handleSubmit} className={styles.form}>
@@ -26,7 +32,12 @@ const NewScoreForm = ({ score, addHighscore }) => {
 				onChange={handleChange}
 				value={name}
 			/>
-			<Button variant={'secondary'} type="submit" onClick={handleSubmit}>
+			<Button
+				variant={'secondary'}
+				type="submit"
+				onClick={handleSubmit}
+				able={able}
+			>
 				Submit
 			</Button>
 		</form>

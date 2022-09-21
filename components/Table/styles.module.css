@@ -12,6 +12,7 @@
 
 .table > tbody > tr > td {
 	padding: 5px 4px;
+	color: var(--grayish-blue);
 }
 @media screen and (max-width: 700px) {
 	.table {

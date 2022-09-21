@@ -95,15 +95,15 @@ export default function Home({ data }) {
 			<div className={styles.container}>
 				<header className={styles.header}>
 					<Button onClick={handleAgain}>Again</Button>
-					<h1 className={styles.title}>
-						GUESS THE{' '}
+					<span className={styles.brand}>
+						<h1 className={styles.title}>GUESS THE</h1>
 						<Image
 							src="/pokemon.svg"
 							alt="Pokemon Logo"
-							width={72}
-							height={72}
+							width={90}
+							height={60}
 						/>
-					</h1>
+					</span>
 				</header>
 				<main className={styles['content--wrapper']}>
 					<aside>
