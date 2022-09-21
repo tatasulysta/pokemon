@@ -9,19 +9,20 @@
 	height: fit-content;
 }
 .primary {
-	border: 2px solid var(--darker-yellow);
-	background-color: #fbebc5;
-	color: var(--deep-yellow);
+	border: 2px solid var(--primary);
+
+	background-color: var(--primary);
+	color: white;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .secondary {
 	background-color: white;
-	border: 2px solid white;
-	color: var(--deep-yellow);
+	border: 2px solid var(--primary);
+	color: var(--primary);
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-.primary:disabled,
+/* .primary:disabled,
 .secondary:disabled {
 	color: red;
-}
+} */

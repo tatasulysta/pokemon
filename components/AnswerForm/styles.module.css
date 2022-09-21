@@ -1,5 +1,5 @@
 .form {
-	border: 1px solid black;
+	border: 2px solid var(--primary);
 	padding: 30px;
 	justify-items: center;
 	align-items: center;
@@ -10,6 +10,9 @@
 	gap: 20px;
 	min-width: 300px;
 	border-radius: 20px;
+}
+.form > b {
+	color: var(--deep-green);
 }
 
 .options--wrapper {

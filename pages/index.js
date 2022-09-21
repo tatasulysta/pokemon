@@ -94,7 +94,7 @@ export default function Home({ data }) {
 			<div className={styles.container}>
 				<header className={styles.header}>
 					<Button onClick={handleAgain}>Again</Button>
-					<h1 className={styles.title}>Guess The Pokemon</h1>
+					<h1 className={styles.title}>GUESS THE POKEMON</h1>
 				</header>
 				<main className={styles['content--wrapper']}>
 					<aside>
@@ -106,7 +106,7 @@ export default function Home({ data }) {
 					<section className={styles['content--main']}>
 						<div className={styles['container--hint']}>
 							<ImageCard src={src} />
-							{information && <Details information={information} />}
+							{information && <Details information={information} src={src} />}
 						</div>
 						{showHighscoreForm ? (
 							<NewScoreForm score={score} />

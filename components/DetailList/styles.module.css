@@ -1,7 +1,6 @@
 .card--container {
-	background-color: white;
 	height: fit-content;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open-sans', sans-serif;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
@@ -9,22 +8,17 @@
 	align-items: center;
 	border-radius: 10px;
 	min-width: 74px;
+	border: 2px solid var(--primary);
 }
 .card--icon {
 	font-size: 30px;
 }
-.weight {
-	color: #eacf6b;
-}
-.moves {
-	color: #96d7d6;
-}
-.height {
-	color: #e6a295;
+.card--icon,
+.card--title {
+	color: var(--grayish-blue);
 }
 .card--title {
 	font-size: 14px;
-	color: gray;
 	margin: 10px 0px 5px 0px;
 }
 .card--information {

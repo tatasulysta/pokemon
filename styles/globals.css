@@ -2,7 +2,7 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	background-color: rgb(214, 244, 244);
+	background-color: var(--background);
 }
 
 a {
@@ -14,14 +14,11 @@ a {
 	box-sizing: border-box;
 }
 :root {
-	--primary: #f5626b;
-	--yellow: #fbebc5;
-	--darker-yellow: #f8d373;
-	--deep-yellow: #b9a364;
-	--gray: #9a937c;
+	--primary: #022952;
+	--grayish-blue: #1b2b3d;
 }
 h1 {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 @media (prefers-color-scheme: dark) {
 	html {
