@@ -4,6 +4,7 @@
 	display: flex;
 }
 .container--image {
+	padding: 10px;
 	flex-basis: 30%;
 	display: flex;
 	justify-content: center;
