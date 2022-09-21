@@ -1,7 +1,6 @@
 .title {
 	text-align: center;
 	color: var(--primary);
-
 	font-weight: 800;
 	font-size: x-large;
 }
@@ -10,14 +9,22 @@
 	font-family: 'Roboto', sans-serif;
 	position: relative;
 }
-.container--hint {
+
+.container--message {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: fit-content;
-	border-radius: 20px;
-	margin-bottom: 20px;
+	flex-direction: column;
+	text-align: center;
+	width: 100%;
+	border-radius: 10px;
+	margin-top: 20px;
+	padding: 40px;
 	border: 2px solid var(--primary);
+}
+.container--message > p {
+	margin: 4px 0px;
+}
+.container--message > b {
+	color: var(--primary);
 }
 .header {
 	display: flex;

@@ -7,7 +7,17 @@ const HighscoreContext = createContext({
 });
 export const HighscoreContextProvider = ({ children }) => {
 	const [highscore, setHighscore] = useState(HIGHSCORE);
+	const checkIsIn = (name) => {
+		const temp = HIGHSCORE.filter((highscore) => highscore.name === name);
+		console.log(temp);
+		if (temp.length) {
+			return true;
+		} else {
+			return false;
+		}
+	};
 	const addHighscore = ({ score, name }) => {
+		console.log(checkIsIn('Lance'));
 		let temp = highscore.filter(
 			(highscore) => highscore.name.toLowerCase() !== name.toLowerCase()
 		);

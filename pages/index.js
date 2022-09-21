@@ -113,17 +113,26 @@ export default function Home({ data }) {
 						</div>
 					</aside>
 					<section className={styles['content--main']}>
-						<div className={styles['container--hint']}>
-							<ImageCard src={src} information={information} />
-						</div>
+						<ImageCard src={src} information={information} />
+
 						{showHighscoreForm ? (
 							<NewScoreForm score={score} />
 						) : (
-							<AnswerForm
-								formData={formData}
-								setIsAnswerTrue={setIsAnswerTrue}
-								able={shouldCountdown}
-							/>
+							<>
+								{count === 0 ? (
+									<div className={styles['container--message']}>
+										<b>GAME OVER</b>
+										<p>Your score is {score}</p>
+										<p>You cannot give up just yet ...</p>
+									</div>
+								) : (
+									<AnswerForm
+										formData={formData}
+										setIsAnswerTrue={setIsAnswerTrue}
+										able={shouldCountdown}
+									/>
+								)}
+							</>
 						)}
 					</section>
 					<aside>

@@ -15,7 +15,7 @@ const NewScoreForm = ({ score }) => {
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (name === ' ') {
+		if (name.trim().length === 0) {
 			window.alert('NO NAME');
 		} else {
 			highscoreProvider.addHighscore({ score, name });

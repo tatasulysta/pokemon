@@ -1,7 +1,11 @@
 .container {
-	width: fit-content;
-	height: fit-content;
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	border: 2px solid var(--primary);
 }
 .container--image {
 	padding: 10px;

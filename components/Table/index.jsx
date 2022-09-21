@@ -10,13 +10,14 @@ const Table = ({}) => {
 		<table className={styles.table}>
 			<thead>
 				<tr>
-					<th>Highscore</th>
+					<th colSpan={2}>Highscore</th>
 				</tr>
 			</thead>
 			<tbody>
-				{highscore?.map(({ name }) => (
+				{highscore?.map(({ name, score }) => (
 					<tr key={name}>
 						<td>{name}</td>
+						<td>{score}</td>
 					</tr>
 				))}
 			</tbody>
