@@ -18,7 +18,4 @@
 	.table {
 		width: 100%;
 	}
-	.table > tbody > tr > td {
-		background-color: black;
-	}
 }
