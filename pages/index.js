@@ -100,7 +100,7 @@ export default function Home({ data }) {
 					<aside>
 						<div>
 							<p>Time : {count}s</p>
-							<p>Current Score :{score}</p>
+							<p>Current Score : {score}</p>
 						</div>
 					</aside>
 					<section className={styles['content--main']}>
