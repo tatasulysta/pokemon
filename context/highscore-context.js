@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { HIGHSCORE } from '../utils/constants/highscore-list';
 
 const HighscoreContext = createContext({
@@ -7,26 +7,40 @@ const HighscoreContext = createContext({
 });
 export const HighscoreContextProvider = ({ children }) => {
 	const [highscore, setHighscore] = useState(HIGHSCORE);
-	const checkIsIn = (name) => {
-		const temp = HIGHSCORE.filter((highscore) => highscore.name === name);
-		console.log(temp);
+	const findIncludeName = (name) => {
+		return highscore.filter(
+			(score) => score.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+		);
+	};
+	const findExcludeName = (name) => {
+		return highscore.filter(
+			(score) => score.name.toLowerCase() !== name.toLowerCase()
+		);
+	};
+	const checkIsNameIn = (name) => {
+		const temp = findIncludeName(name);
 		if (temp.length) {
-			return true;
+			return temp;
 		} else {
 			return false;
 		}
 	};
-	const addHighscore = ({ score, name }) => {
-		console.log(checkIsIn('Lance'));
-		let temp = highscore.filter(
-			(highscore) => highscore.name.toLowerCase() !== name.toLowerCase()
-		);
-		if (temp.length > 4) {
-			temp.pop();
-		}
+	const addNewScore = ({ score, name, currentState }) => {
+		const temp = currentState;
 		temp.push({ score, name });
 		temp.sort((a, b) => b.score - a.score);
 		setHighscore(temp);
+	};
+
+	const addHighscore = ({ score, name }) => {
+		const isIn = checkIsNameIn(name);
+		const temp = findExcludeName(name);
+		if (isIn) {
+			isIn[0].score < score && addNewScore({ score, name, currenState: temp });
+		} else {
+			temp.pop();
+			addNewScore({ score, name, currentState: temp });
+		}
 	};
 
 	return (
