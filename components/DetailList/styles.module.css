@@ -1,19 +1,14 @@
 .card--container {
 	height: fit-content;
 	font-family: 'Open-sans', sans-serif;
-	padding: 10px;
 	display: flex;
-	flex-direction: column;
+	gap: 20px;
 	flex-grow: 1;
 	align-items: center;
 	border-radius: 10px;
 	min-width: 74px;
-	border: 2px solid var(--primary);
 }
-.card--icon {
-	font-size: 30px;
-}
-.card--icon,
+
 .card--title {
 	color: var(--grayish-blue);
 }

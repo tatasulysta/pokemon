@@ -2,8 +2,9 @@
 	text-align: center;
 	color: var(--primary);
 	font-weight: 800;
-	font-size: 28px;
+	font-size: x-large;
 }
+
 .container {
 	font-family: 'Roboto', sans-serif;
 	position: relative;
@@ -37,4 +38,29 @@
 	display: flex;
 	align-items: center;
 	color: var(--primary);
+}
+@media screen and (max-width: 700px) {
+	.header {
+		justify-content: space-around;
+	}
+	.header > button {
+		position: relative;
+		left: 0;
+	}
+	.content--wrapper {
+		flex-direction: column;
+		align-items: center;
+	}
+	.content--wrapper > aside > div {
+		display: flex;
+		gap: 20px;
+	}
+	.content--wrapper {
+		width: fit-content;
+		margin: 0 auto;
+	}
+	.content--wrapper > aside {
+		width: 100%;
+		justify-content: center;
+	}
 }

@@ -12,7 +12,7 @@
 	border-radius: 20px;
 }
 .form > b {
-	color: var(--deep-green);
+	color: var(--primary);
 }
 
 .options--wrapper {

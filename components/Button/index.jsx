@@ -1,15 +1,12 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-const variants = ['primary', 'secondary'];
-
 const Button = ({ children, variant, onClick, type, able }) => {
-	const checkVariant = variants.includes(variant);
 	return (
 		<>
 			{able === false ? (
 				<button
-					className={checkVariant ? styles[variant] : styles.primary}
+					className={styles.primary}
 					onClick={onClick}
 					type={type}
 					disabled
@@ -17,11 +14,7 @@ const Button = ({ children, variant, onClick, type, able }) => {
 					{children}
 				</button>
 			) : (
-				<button
-					className={checkVariant ? styles[variant] : styles.primary}
-					onClick={onClick}
-					type={type}
-				>
+				<button className={styles.primary} onClick={onClick} type={type}>
 					{children}
 				</button>
 			)}

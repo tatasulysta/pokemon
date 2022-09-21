@@ -18,6 +18,7 @@ import Details from '../components/Details';
 import AnswerForm from '../components/AnswerForm';
 import NewScoreForm from '../components/NewScoreForm';
 import Table from '../components/Table';
+import Image from 'next/image';
 
 export const getStaticProps = async () => {
 	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
@@ -94,7 +95,15 @@ export default function Home({ data }) {
 			<div className={styles.container}>
 				<header className={styles.header}>
 					<Button onClick={handleAgain}>Again</Button>
-					<h1 className={styles.title}>GUESS THE POKEMON</h1>
+					<h1 className={styles.title}>
+						GUESS THE{' '}
+						<Image
+							src="/pokemon.svg"
+							alt="Pokemon Logo"
+							width={72}
+							height={72}
+						/>
+					</h1>
 				</header>
 				<main className={styles['content--wrapper']}>
 					<aside>
@@ -105,8 +114,7 @@ export default function Home({ data }) {
 					</aside>
 					<section className={styles['content--main']}>
 						<div className={styles['container--hint']}>
-							<ImageCard src={src} />
-							{information && <Details information={information} src={src} />}
+							<ImageCard src={src} information={information} />
 						</div>
 						{showHighscoreForm ? (
 							<NewScoreForm score={score} />

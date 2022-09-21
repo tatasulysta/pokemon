@@ -2,7 +2,6 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	background-color: var(--background);
 }
 
 a {
@@ -14,7 +13,7 @@ a {
 	box-sizing: border-box;
 }
 :root {
-	--primary: #022952;
+	--primary: #3169b6;
 	--grayish-blue: #1b2b3d;
 }
 h1 {

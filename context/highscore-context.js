@@ -9,7 +9,7 @@ export const HighscoreContextProvider = ({ children }) => {
 	const [highscore, setHighscore] = useState(HIGHSCORE);
 	const addHighscore = ({ score, name }) => {
 		let temp = highscore.filter(
-			(highscore) => highscore.name.toLowerCase() !== name
+			(highscore) => highscore.name.toLowerCase() !== name.toLowerCase()
 		);
 		if (temp.length > 4) {
 			temp.pop();

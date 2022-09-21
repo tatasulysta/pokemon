@@ -1,5 +1,4 @@
-.primary,
-.secondary {
+.primary {
 	font-family: 'Roboto', sans-serif;
 	font-size: 15px;
 	font-weight: 700;
@@ -15,15 +14,8 @@
 	color: white;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-.secondary {
-	background-color: white;
-	border: 2px solid var(--primary);
-	color: var(--primary);
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
 
-.primary:disabled,
-.secondary:disabled {
+.primary:disabled {
 	background-color: gray;
 	color: rgb(194, 194, 194);
 	border: none;
