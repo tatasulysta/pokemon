@@ -7,19 +7,27 @@ import styles from './styles.module.css';
 
 const AnswerForm = ({ formData, setIsAnswerTrue, able }) => {
 	const [select, setSelect] = useState();
+	const [isTrue, setIsTrue] = useState(true);
 
 	const handleChange = (e) => {
 		setSelect(e.target.value);
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		select === formData?.answer
-			? setIsAnswerTrue(true)
-			: setIsAnswerTrue(false);
+		if (select === formData?.answer) {
+			setIsAnswerTrue(true);
+			setIsTrue(true);
+		} else {
+			setIsAnswerTrue(false);
+			setIsTrue(false);
+		}
 	};
 	return (
 		<form onSubmit={handleSubmit} className={styles.form}>
-			<b>Answer</b>
+			<span className={styles['title--message_container']}>
+				<b>Answer</b>
+				{!isTrue && <p>Wrong Answer </p>}
+			</span>
 			<div className={styles['options--wrapper']}>
 				<Options
 					options={formData?.options}

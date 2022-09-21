@@ -15,6 +15,7 @@ a {
 :root {
 	--primary: #3169b6;
 	--grayish-blue: #1b2b3d;
+	--red: #d26065;
 }
 h1 {
 	font-family: 'Open Sans', sans-serif;
