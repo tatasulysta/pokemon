@@ -1,4 +1,7 @@
 import Head from 'next/head';
+import HighscoreContext, {
+	HighscoreContextProvider,
+} from '../context/highscore-context';
 import { useContext, useEffect, useState } from 'react';
 
 import useFetchPokemon from '../utils/hooks/useFetchPokemon';
@@ -15,9 +18,6 @@ import Details from '../components/Details';
 import AnswerForm from '../components/AnswerForm';
 import NewScoreForm from '../components/NewScoreForm';
 import Table from '../components/Table';
-import HighscoreContext, {
-	HighscoreContextProvider,
-} from '../context/highscore-context';
 
 export const getStaticProps = async () => {
 	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
@@ -87,6 +87,10 @@ export default function Home({ data }) {
 
 	return (
 		<HighscoreContextProvider>
+			<Head>
+				<meta name="description" content="Guess The Pokemon" />
+				<title>Guess The Pokemon</title>
+			</Head>
 			<div className={styles.container}>
 				<header className={styles.header}>
 					<Button onClick={handleAgain}>Again</Button>
