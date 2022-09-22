@@ -1,4 +1,5 @@
 # Guess The Pokemon
+![Guess The Pokemon](https://user-images.githubusercontent.com/87609169/191692276-e8d9172e-071d-4a83-8a5d-07821f578a13.png)
 
 **Table of Contents**
   - [About Project](#about-project)
@@ -7,8 +8,8 @@
   - [Acknowledgment](#acknowledgment)
   - [Built with](#built-with)
 ## About Project 
-
-  Guess The Pokemon is a website game where you need to guess what pokemon it is based on the picture and characteristics within 60 seconds. Guess as fast as you can! So you can put your name on the high score list.
+  ![image](https://user-images.githubusercontent.com/87609169/191692744-dfdf161b-c03d-44f8-a2ea-02d5463117aa.png)
+Guess The Pokemon is a website game where you need to guess what pokemon it is based on the picture and characteristics within 60 seconds. Guess as fast as you can! So you can put your name on the high score list.
 
 
 ## Prerequisites 
