@@ -7,7 +7,7 @@ const DetailLists = ({ detail, title }) => {
 		<li className={styles['card--container']}>
 			<span className={`${styles['card--title']} `}>{title}</span>
 			{
-				<li className={styles['card--abilities_container']}>
+				<ul className={styles['card--abilities_container']}>
 					{detail.map((detail) => {
 						return (
 							<li key={detail} className={styles['card--abilities_list']}>
@@ -15,7 +15,7 @@ const DetailLists = ({ detail, title }) => {
 							</li>
 						);
 					})}
-				</li>
+				</ul>
 			}
 		</li>
 	);

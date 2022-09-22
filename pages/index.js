@@ -19,6 +19,7 @@ import AnswerForm from '../components/AnswerForm';
 import NewScoreForm from '../components/NewScoreForm';
 import Table from '../components/Table';
 import Information from '../components/Information';
+import GameOver from '../components/GameOver/Index';
 
 export const getStaticProps = async () => {
 	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
@@ -125,11 +126,7 @@ export default function Home({ data }) {
 						) : (
 							<>
 								{count === 0 ? (
-									<div className={styles['container--message']}>
-										<b>GAME OVER</b>
-										<p>Your score is {score}</p>
-										<p>You cannot give up just yet ...</p>
-									</div>
+									<GameOver score={score} />
 								) : (
 									<AnswerForm
 										formData={formData}

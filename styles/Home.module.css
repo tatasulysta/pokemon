@@ -10,22 +10,6 @@
 	position: relative;
 }
 
-.container--message {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	width: 100%;
-	border-radius: 10px;
-	margin-top: 20px;
-	padding: 40px;
-	border: 2px solid var(--primary);
-}
-.container--message > p {
-	margin: 4px 0px;
-}
-.container--message > b {
-	color: var(--primary);
-}
 .header {
 	display: flex;
 	padding: 10px;
