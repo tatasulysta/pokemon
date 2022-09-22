@@ -39,7 +39,7 @@ To run this project you need to use this software.
 * [React Icons](https://react-icons.github.io/react-icons/search)
 * [Sweet Alert](https://sweetalert2.github.io/)
 * [Google Font](https://fonts.google.com/)
-* [PokeApi](pokeapi.co)
+* [PokeApi](https://pokeapi.co)
 
 ## Built with 
 
