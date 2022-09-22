@@ -20,6 +20,12 @@ a {
 h1 {
 	font-family: 'Open Sans', sans-serif;
 }
+.swal2-popup {
+	font-family: 'Open Sans', sans-serif !important;
+}
+.swal2-styled {
+	background-color: var(--primary) !important;
+}
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;

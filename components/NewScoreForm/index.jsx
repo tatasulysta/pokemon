@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import HighscoreContext from '../../context/highscore-context';
 
 import Button from '../Button';
+import Swal from 'sweetalert2';
 
 import styles from './styles.module.css';
 
@@ -16,10 +17,29 @@ const NewScoreForm = ({ score }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (name.trim().length === 0) {
-			window.alert('NO NAME');
+			Swal.fire({
+				title: 'Error',
+				text: 'Please write your name',
+				icon: 'error',
+				confirmButtonText: 'Ok',
+			});
 		} else {
-			highscoreProvider.addHighscore({ score, name });
-			setAble(false);
+			const state = highscoreProvider.addHighscore({ score, name });
+			if (!state) {
+				Swal.fire({
+					title: 'Error',
+					text: 'This name has been used by another player',
+					icon: 'error',
+					showDenyButton: true,
+					confirmButtonText: 'Ok',
+					denyButtonText: `Don't Save`,
+					denyButtonColor: 'white',
+				}).then((res) => {
+					if (res.isDenied) {
+						setAble(false);
+					}
+				});
+			}
 		}
 	};
 	return (

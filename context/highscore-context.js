@@ -36,10 +36,16 @@ export const HighscoreContextProvider = ({ children }) => {
 		const isIn = checkIsNameIn(name);
 		const temp = findExcludeName(name);
 		if (isIn) {
-			isIn[0].score < score && addNewScore({ score, name, currenState: temp });
+			if (isIn[0].score < score) {
+				addNewScore({ score, name, currentState: temp });
+				return true;
+			} else {
+				return false;
+			}
 		} else {
 			temp.pop();
 			addNewScore({ score, name, currentState: temp });
+			return true;
 		}
 	};
 
