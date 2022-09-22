@@ -1,0 +1,9 @@
+.container {
+	color: var(--primary);
+}
+@media screen and (max-width: 700px) {
+	.container {
+		display: flex;
+		gap: 20px;
+	}
+}
