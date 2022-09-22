@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from './styles.module.css';
 import Details from '../Details';
 
-const ImageCard = ({ src, information }) => {
+const PokemonCard = ({ src, information }) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles['container--image']}>
@@ -24,4 +24,4 @@ const ImageCard = ({ src, information }) => {
 	);
 };
 
-export default ImageCard;
+export default PokemonCard;

@@ -13,8 +13,7 @@ import randomGenerator from '../utils/helpers/randomGenerator';
 import optionsGenerator from '../utils/helpers/optionsGenerator';
 
 import Button from '../components/Button';
-import ImageCard from '../components/ImageCard';
-import Details from '../components/Details';
+import PokemonCard from '../components/PokemonCard';
 import AnswerForm from '../components/AnswerForm';
 import NewScoreForm from '../components/NewScoreForm';
 import Table from '../components/Table';
@@ -115,7 +114,7 @@ export default function Home({ data }) {
 						/>
 					</aside>
 					<section className={styles['content--main']}>
-						<ImageCard src={src} information={information} />
+						<PokemonCard src={src} information={information} />
 						<Information
 							score={score}
 							count={count}
