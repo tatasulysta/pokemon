@@ -30,7 +30,7 @@ const NewScoreForm = ({ score }) => {
 					title: 'Error',
 					text: 'This name has been used by another player',
 					icon: 'error',
-					showConfirmButton: true,
+					showDenyButton: true,
 					denyButtonText: `Don't Save`,
 					confirmButtonText: 'Change Name',
 					denyButtonColor: 'white',
