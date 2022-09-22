@@ -1,7 +1,8 @@
 import React from 'react';
+
 import styles from './styles.module.css';
 
-const Button = ({ children, variant, onClick, type, able }) => {
+const Button = ({ children, onClick, type, able }) => {
 	return (
 		<>
 			{able === false ? (

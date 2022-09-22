@@ -6,6 +6,7 @@ import styles from './styles.module.css';
 const Table = ({}) => {
 	const highscoreProvider = useContext(HighscoreContext);
 	const highscore = highscoreProvider.highscore;
+
 	return (
 		<table className={styles.table}>
 			<thead>

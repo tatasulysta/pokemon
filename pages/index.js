@@ -12,12 +12,12 @@ import styles from '../styles/Home.module.css';
 import randomGenerator from '../utils/helpers/randomGenerator';
 import optionsGenerator from '../utils/helpers/optionsGenerator';
 
+import Image from 'next/image';
 import Button from '../components/Button';
 import PokemonCard from '../components/PokemonCard';
 import AnswerForm from '../components/AnswerForm';
 import NewScoreForm from '../components/NewScoreForm';
 import Table from '../components/Table';
-import Image from 'next/image';
 import Information from '../components/Information';
 
 export const getStaticProps = async () => {

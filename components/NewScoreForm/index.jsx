@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import HighscoreContext from '../../context/highscore-context';
 
-import Button from '../Button';
 import Swal from 'sweetalert2';
+import Button from '../Button';
 
 import styles from './styles.module.css';
 

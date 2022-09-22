@@ -1,8 +1,9 @@
 import React from 'react';
+
 import Image from 'next/image';
+import Details from '../Details';
 
 import styles from './styles.module.css';
-import Details from '../Details';
 
 const PokemonCard = ({ src, information }) => {
 	return (
