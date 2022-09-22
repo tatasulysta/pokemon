@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 const useCountdown = () => {
-	const [count, setCount] = useState(15);
+	const [count, setCount] = useState(60);
 	const [shouldCountdown, setShouldCountdown] = useState(true);
 	const handleRestart = () => {
-		setCount(15);
+		setCount(60);
 		setShouldCountdown(true);
 	};
 	useEffect(() => {
