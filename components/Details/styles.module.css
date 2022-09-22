@@ -1,0 +1,32 @@
+.container {
+	width: fit-content;
+	height: fit-content;
+	padding: 20px 40px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	background-color: var(--dark-green);
+	display: flex;
+}
+.list--container {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+}
+.weight {
+	background-color: antiquewhite;
+}
+.list--container_upper {
+	display: flex;
+	gap: 10px;
+	width: 100%;
+	justify-content: space-between;
+}
+.list--container_bottom {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}

@@ -1,0 +1,23 @@
+.card--container {
+	height: fit-content;
+	font-family: 'Open-sans', sans-serif;
+	display: flex;
+	gap: 20px;
+	flex-grow: 1;
+	align-items: center;
+	border-radius: 10px;
+	min-width: 74px;
+}
+
+.card--title {
+	color: var(--grayish-blue);
+}
+.card--title {
+	font-size: 14px;
+	margin: 10px 0px 5px 0px;
+}
+.card--information {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+}

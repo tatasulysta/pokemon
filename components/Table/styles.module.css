@@ -1,0 +1,22 @@
+.table {
+	border: 2px solid var(--primary);
+	border-radius: 10px;
+	border-collapse: separate;
+	min-width: 150px;
+	height: fit-content;
+}
+.table > thead > tr > th {
+	padding: 5px 4px;
+	border-bottom: 2px solid var(--primary);
+	color: var(--primary);
+}
+
+.table > tbody > tr > td {
+	padding: 5px 4px;
+	color: var(--grayish-blue);
+}
+@media screen and (max-width: 700px) {
+	.table {
+		width: 100%;
+	}
+}
