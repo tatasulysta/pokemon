@@ -28,7 +28,7 @@ const NewScoreForm = ({ score }) => {
 			if (!state) {
 				Swal.fire({
 					title: 'Error',
-					text: 'This name has been used by another player',
+					text: 'This name has been used. Current score is lower than before. ',
 					icon: 'error',
 					showDenyButton: true,
 					denyButtonText: `Don't Save`,

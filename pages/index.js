@@ -134,6 +134,7 @@ export default function Home({ data }) {
 									<AnswerForm
 										formData={formData}
 										setIsAnswerTrue={setIsAnswerTrue}
+										isAnswerTrue={isAnswerTrue}
 										able={shouldCountdown}
 									/>
 								)}

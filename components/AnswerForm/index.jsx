@@ -5,7 +5,7 @@ import Options from '../Options';
 
 import styles from './styles.module.css';
 
-const AnswerForm = ({ formData, setIsAnswerTrue, able }) => {
+const AnswerForm = ({ formData, setIsAnswerTrue, isAnswerTrue, able }) => {
 	const [select, setSelect] = useState();
 	const [isTrue, setIsTrue] = useState(true);
 
@@ -23,6 +23,9 @@ const AnswerForm = ({ formData, setIsAnswerTrue, able }) => {
 			setIsTrue(false);
 		}
 	};
+	useEffect(() => {
+		isAnswerTrue && setSelect('');
+	}, [isAnswerTrue]);
 	return (
 		<form onSubmit={handleSubmit} className={styles.form}>
 			<span className={styles['title--message_container']}>
