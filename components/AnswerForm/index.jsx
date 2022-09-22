@@ -11,6 +11,7 @@ const AnswerForm = ({ formData, setIsAnswerTrue, able }) => {
 
 	const handleChange = (e) => {
 		setSelect(e.target.value);
+		setIsTrue(true);
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();

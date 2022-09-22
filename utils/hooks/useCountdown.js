@@ -4,7 +4,7 @@ const useCountdown = () => {
 	const [count, setCount] = useState(15);
 	const [shouldCountdown, setShouldCountdown] = useState(true);
 	const handleRestart = () => {
-		setCount(60);
+		setCount(15);
 		setShouldCountdown(true);
 	};
 	useEffect(() => {
