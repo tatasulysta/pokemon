@@ -45,11 +45,13 @@
 	flex-basis: 20%;
 	display: flex;
 	align-items: center;
-	color: var(--primary);
 }
 .brand {
 	display: flex;
 	gap: 10px;
+}
+.information2--styled {
+	display: none;
 }
 @media screen and (max-width: 700px) {
 	.header {
@@ -63,16 +65,18 @@
 		flex-direction: column;
 		align-items: center;
 	}
-	.content--wrapper > aside > div {
-		display: flex;
-		gap: 20px;
-	}
 	.content--wrapper {
 		width: fit-content;
 		margin: 0 auto;
 	}
-	.content--wrapper > aside {
+	.content--wrapper > aside,
+	.information2--styled {
+		display: flex;
 		width: 100%;
 		justify-content: center;
+	}
+
+	.content--wrapper > aside:nth-child(1) {
+		display: none;
 	}
 }

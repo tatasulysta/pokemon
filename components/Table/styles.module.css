@@ -8,6 +8,7 @@
 .table > thead > tr > th {
 	padding: 5px 4px;
 	border-bottom: 2px solid var(--primary);
+	color: var(--primary);
 }
 
 .table > tbody > tr > td {

@@ -19,6 +19,7 @@ import AnswerForm from '../components/AnswerForm';
 import NewScoreForm from '../components/NewScoreForm';
 import Table from '../components/Table';
 import Image from 'next/image';
+import Information from '../components/Information';
 
 export const getStaticProps = async () => {
 	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
@@ -107,14 +108,19 @@ export default function Home({ data }) {
 				</header>
 				<main className={styles['content--wrapper']}>
 					<aside>
-						<div>
-							<p>Time : {count}s</p>
-							<p>Current Score : {score}</p>
-						</div>
+						<Information
+							score={score}
+							count={count}
+							className={styles['information1--styled']}
+						/>
 					</aside>
 					<section className={styles['content--main']}>
 						<ImageCard src={src} information={information} />
-
+						<Information
+							score={score}
+							count={count}
+							className={styles['information2--styled']}
+						/>
 						{showHighscoreForm ? (
 							<NewScoreForm score={score} />
 						) : (
