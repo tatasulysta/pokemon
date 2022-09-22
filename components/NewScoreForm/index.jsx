@@ -53,6 +53,7 @@ const NewScoreForm = ({ score }) => {
 				id="name"
 				onChange={handleChange}
 				value={name}
+				disabled={!able}
 			/>
 			<Button
 				variant={'secondary'}
