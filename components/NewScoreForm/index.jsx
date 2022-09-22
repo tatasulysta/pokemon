@@ -31,14 +31,16 @@ const NewScoreForm = ({ score }) => {
 					text: 'This name has been used by another player',
 					icon: 'error',
 					showDenyButton: true,
-					confirmButtonText: 'Ok',
 					denyButtonText: `Don't Save`,
+					confirmButtonText: 'Ok',
 					denyButtonColor: 'white',
 				}).then((res) => {
 					if (res.isDenied) {
 						setAble(false);
 					}
 				});
+			} else {
+				setAble(false);
 			}
 		}
 	};
