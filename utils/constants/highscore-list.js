@@ -1,22 +1,22 @@
 export const HIGHSCORE = [
 	{
-		score: 5,
+		score: 12,
 		name: 'Terrance',
 	},
 	{
-		score: 4,
+		score: 8,
 		name: 'Lance',
 	},
 	{
-		score: 2,
+		score: 7,
 		name: 'Tann',
 	},
 	{
-		score: 2,
+		score: 7,
 		name: 'Jenica',
 	},
 	{
-		score: 2,
+		score: 4,
 		name: 'Kinna',
 	},
 ];
