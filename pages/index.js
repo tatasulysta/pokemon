@@ -4,8 +4,8 @@ import HighscoreContext, {
 } from '../context/highscore-context';
 import { useContext, useEffect, useState } from 'react';
 
-import useFetchPokemon from '../utils/hooks/useFetchPokemon';
-import useCountdown from '../utils/hooks/useCountDown';
+import useFetchPokemon from '../utils/Hooks/useFetchPokemon';
+import useCountdown from '../utils/Hooks/useCountDown';
 
 import styles from '../styles/Home.module.css';
 
