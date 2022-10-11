@@ -21,7 +21,7 @@ import Information from '../components/Information';
 import GameOver from '../components/GameOver/Index';
 
 export const getStaticProps = async () => {
-	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
+	const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=500');
 	const data = await res.json();
 	return {
 		props: {

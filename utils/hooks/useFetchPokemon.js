@@ -9,7 +9,7 @@ const useFetchPokemon = (url) => {
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
-				setImageSrc(res.sprites['front_default']);
+				setImageSrc(res.sprites['back_default']);
 				const abilities = res.abilities.map((stay) => stay.ability.name);
 				setInformation({
 					moves: res.moves.slice(0, 5).map((move) => move.move.name),
